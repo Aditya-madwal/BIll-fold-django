@@ -1,0 +1,175 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Tracker</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+
+    <style>
+      /* styles.css */
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #faeed1;
+        margin: 0;
+        padding: 0;
+        font-family: 'Montserrat', sans-serif;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      header {
+        text-align: center;
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      .summary {
+        margin: 20px 0;
+        text-align: center;
+      }
+
+      .balance {
+        margin-bottom: 10px;
+      }
+
+      .balance p {
+        font-weight: bold;
+      }
+
+      .balance span {
+        display: block;
+        font-size: 1.5em;
+        margin-top: 5px;
+      }
+
+      .details {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .income span {
+        color: #28a745;
+        font-size: 20px;
+      }
+
+      .expenses span {
+        color: #dc3545;
+        font-size: 20px;
+      }
+
+      .transaction-history {
+        margin-bottom: 20px;
+      }
+
+      .transaction-history h2 {
+        color: #333;
+      }
+
+      .transaction-history ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .transaction-history li {
+        margin-bottom: 5px;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .transaction-history li.income {
+        background-color: #d4edda;
+        color: #155724;
+      }
+
+      .transaction-history li.expense {
+        background-color: #f8d7da;
+        color: #721c24;
+      }
+
+      .add-transaction {
+        margin-bottom: 20px;
+      }
+
+      form {
+        display: grid;
+        gap: 10px;
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      input,
+      select {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      button {
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+
+      .delete-btn {
+        background-color: #bf3131;
+        width: 300px;
+        border-radius: 1000px;
+      }
+
+      .delete-btn:hover {
+        color : #000;
+      }
+
+      form{
+        display: block;
+        text-align : center;
+      }
+
+      button:hover {
+        background-color: #F6F7C4;
+        color: #000;
+      }
+
+      .transaction-history li {
+        margin-bottom: 10px;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #fff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <h1>Budget Tracker</h1>
+      </head>
+      <form method = "POST">
+        {% csrf_token %}
+        <h3>confirm delete "{{item.category}} Rs.{{item.amount}}" ?</h3>
+        <button type = 'submit' class = "delete-btn">Yes, Delete</button>
+      </form>
+    </div>
+  </body>
+</html>
