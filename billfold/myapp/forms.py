@@ -4,4 +4,9 @@ from .models import *
 class transactions_form(forms.ModelForm):
     class Meta:
         model = transactions
-        fields = '__all__'
+        fields = ['amount','label','category']
+
+class wallets_form(forms.ModelForm):
+    class Meta:
+        model = wallets
+        fields = ["name"]

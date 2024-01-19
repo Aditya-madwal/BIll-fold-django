@@ -164,7 +164,7 @@
   <body>
     <div class="container">
       <header>
-        <h1>Bill Fold</h1>
+        <h1>{{name}}</h1>
       </header>
 
       <section class="summary">
@@ -190,7 +190,6 @@
         </div>
       </section>
 
-      
       <section class="add-transaction">
         <h2>Add New Transaction</h2>
         <form id="transactionForm" method="POST">
@@ -217,7 +216,7 @@
               ><b>₹{{transaction.amount}}</b></span
             >
             <span class="transaction-category">{{transaction.category}}</span>
-            <button class="delete-btn" onclick="deleteTransaction(this)">
+            <button class="delete-btn">
               <a style = "text-decoration : none; color:white" href = "{% url "delete" transaction.id %}">Delete</a>
             </button>
           </li>
